@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter
+k = 60  # konstanta pegas (N/m)
+x = np.arange(0, 0.52, 0.02)  # posisi x dari 0 hingga 0.5 m (dengan Δx = 0.02)
+F = -k * x  # gaya F(x) berdasarkan Hukum Hooke
+
+# Menampilkan hasil perhitungan F(x)
+print("x (m)     F(x) (N)")
+for xi, Fi in zip(x, F):
+    print(f"{xi:.2f}      {Fi:.2f}")
+
+# Plot grafik
+plt.figure(figsize=(8, 5))
+plt.plot(x, F, marker='o', label='F(x) = -kx')
+plt.title("Grafik Gaya Pegas F(x) terhadap Posisi x")
+plt.xlabel("Posisi x (m)")
+plt.ylabel("Gaya F(x) (N)")
+plt.grid()
+plt.legend()
+plt.show()
