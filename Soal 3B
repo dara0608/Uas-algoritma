@@ -1,0 +1,23 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter
+v0 = 50  # Kecepatan awal (m/s)
+g = 9.8  # Percepatan gravitasi (m/s^2)
+
+# b) NPM Genap: Grafik sampai kembali ke posisi awal
+t_total = 2 * t_max  # Waktu total sampai benda kembali ke tanah
+
+# Waktu dari 0 sampai t_total
+t_2 = np.linspace(0, t_total, 500)
+h_2 = v0 * t_2 - 0.5 * g * t_2**2
+
+# Plot grafik untuk b) Sampai kembali ke posisi awal
+plt.figure(figsize=(10, 6))
+plt.plot(t_2, h_2, label=f'Gerak vertikal (Kembali ke Posisi Awal)', color='red')
+plt.title('Gerak Vertikal Sampai Kembali ke Posisi Awal (NPM Genap)')
+plt.xlabel('Waktu (detik)')
+plt.ylabel('Tinggi (meter)')
+plt.grid(True)
+plt.legend()
+plt.show()
