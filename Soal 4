@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definisi fungsi gaya tak konstan
+def F(x):
+    return 2 * x**2 + 4 * x + 2
+
+# Rentang perpindahan (0 hingga 30 meter)
+x_values = np.linspace(0, 30, 100)  # 100 titik data untuk grafik
+f_values = F(x_values)
+
+# Membuat grafik
+plt.figure(figsize=(10, 6))
+plt.plot(x_values, f_values, label="F(x) = 2x^2 + 4x + 2", color="g")
+
+# Menambahkan elemen grafik
+plt.title("Grafik Gaya Tak Konstan F(x) terhadap Posisi x", fontsize=14)
+plt.xlabel("Posisi x (m)", fontsize=12)
+plt.ylabel("Gaya F(x) (N)", fontsize=12)
+plt.grid(True)
+plt.legend()
+plt.show()
