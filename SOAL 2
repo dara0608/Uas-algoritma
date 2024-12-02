@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter gerak harmonis
+T = 10  # Periode (detik)
+A = 0.05  # Amplitudo (meter)
+t_values = np.arange(0, 50.1, 0.1)  # Waktu dari 0 hingga 50 detik (interval 0.1 detik)
+
+# Menghitung posisi x(t)
+x_values = A * np.cos(2 * np.pi * t_values / T)
+
+# Menampilkan hasil 
+for t, x in zip(t_values[::50], x_values[::50]):  # Menampilkan setiap 5 detik
+    print(f"t = {t:.1f} s, x = {x:.4f} m")
+
+# Membuat grafik
+plt.plot(t_values, x_values, label="x(t) = A cos(2πt/T)", color="r")
+plt.title("Grafik Posisi terhadap Waktu", fontsize=14)
+plt.xlabel("Waktu (s)")
+plt.ylabel("Posisi (m)")
+plt.axhline(0, color="black", linewidth=0.8, linestyle="--")
+plt.grid(True)
+plt.legend()
+plt.show()
